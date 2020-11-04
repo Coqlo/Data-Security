@@ -27,197 +27,160 @@ class _LoginScreenState extends State <LoginScreen>{
             left: _heigth*0.01,
             right: _heigth*0.01
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                height: _heigth*0.945,
-                width: _width,
-                color: Color(0xFF19244F),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      height: _heigth*0.1,
-                      width: _width,
-                      color: Color(0xFF19244F),
-                      child: IconButton(
-                        onPressed: (){
-                          Navigator.of(context).pop();
+          child: Container(
+            height: _heigth*0.945,
+            width: _width,
+            color: Color(0xFF19244F),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: _heigth*0.1,
+                  width: _width,
+                  color: Color(0xFF19244F),
+                  child: IconButton(
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    },
+                    icon: Icon(Icons.arrow_back_ios,
+                    color: Colors.white,
+                    size: 30,),
+                  )
+                ),
+                Container(
+                  alignment: Alignment.topCenter,
+                  height: _heigth*0.18,
+                  width: _width,
+                  child: Text('Please sign in to application and continue...',style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold
+                  ),),
+                ),
+                Container(
+                  alignment: Alignment.topCenter,
+                  height: _heigth*0.11,
+                  width: _width,
+                  child: Text('Enter your username and password below to continue to the 2wntJ developer and the lerning begin',style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                  ),),
+                ),
+                Container(
+                  padding: EdgeInsets.all(12),
+                  height: _heigth/4,
+                  width: _width,
+
+                  child: Column(
+                    children: <Widget>[
+                      TextFormField(
+                        validator: (String value) {
+                          if (value.isEmpty)
+                            return 'Please enter a Username';
                         },
-                        icon: Icon(Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 30,),
-                      )
-                    ),
-                    Container(
-                      alignment: Alignment.topCenter,
-                      height: _heigth*0.18,
-                      width: _width,
-                      child: Text('Please sign in to application and continue...',style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 34,
-                        fontWeight: FontWeight.bold
-                      ),),
-                    ),
-                    Container(
-                      alignment: Alignment.topCenter,
-                      height: _heigth*0.11,
-                      width: _width,
-                      child: Text('Enter your username and password below to continue to the 2wntJ developer and the lerning begin',style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                      ),),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(12),
-                      height: _heigth*0.2,
-                      width: _width,
-
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.blueAccent,width: 3)
-                            ),
-                            height: _heigth*0.07,
-                            width: _width,
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  alignment: Alignment.center,
-                                  height: _heigth,
-                                  width: _width*0.15,
-                                  child: Icon(Icons.account_circle,
-                                    size: 49,
-                                  color: Colors.white,),
-                                ),
-                                Container(
-                                  height: _heigth,
-                                  width: _width*0.734,
-
-                                  child: TextFormField(
-                                    keyboardType: TextInputType.emailAddress,
-                                    decoration: InputDecoration(
-                                      labelText: 'Username',
-                                      labelStyle: TextStyle(
-                                        fontSize: 20,
-                                          color: Colors.white
-                                      )
-
-
-                                    ),
-
-                                  ),
-                                )
-                              ],
-                            ),
+                        style: Theme.of(context).textTheme.headline6,
+                        //controller: controllerPassword,
+                        obscureText: true,
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                          errorStyle: TextStyle(fontSize: 14.0),
+                          labelText: 'Username',
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: Colors.blueAccent,
                           ),
-                          Container(
-                            height: _heigth*0.03,
-                            width: _width,
-                            
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.blueAccent,width: 3)
-                            ),
-                            height: _heigth*0.07,
-                            width: _width,
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  alignment: Alignment.center,
-                                  height: _heigth,
-                                  width: _width*0.15,
-                                  child: Icon(Icons.lock,
-                                    size: 49,
-                                    color: Colors.white,),
-                                ),
-                                Container(
-                                  height: _heigth,
-                                  width: _width*0.734,
-
-                                  child: TextFormField(
-                                    keyboardType: TextInputType.emailAddress,
-                                    decoration: InputDecoration(
-                                        labelText: 'Password',
-                                        labelStyle: TextStyle(
-                                            fontSize: 20,
-                                          color: Colors.white
-                                        )
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(width: 2)
                           ),
 
-                        ],
+                          filled: true,
+                          fillColor: Colors.white30,
+                        ),
+                        keyboardType: TextInputType.text,
                       ),
-                    ),
-                    Container(
-                        height: _heigth*0.015,
+                      SizedBox(height: 20,),
+                      TextFormField(
+                        validator: (String value) {
+                          if (value.isEmpty)
+                            return 'Please enter a password';
+                        },
+                        style: Theme.of(context).textTheme.headline6,
+                        //controller: controllerPassword,
+                        obscureText: true,
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                          errorStyle: TextStyle(fontSize: 14.0),
+                          labelText: 'Password',
+                          prefixIcon: Icon(
+                            Icons.vpn_key,
+                            color: Colors.blueAccent,
+                          ),
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(width: 2)
+                          ),
+                          filled: true,
+                          fillColor: Colors.white30,
+                        ),
+                        keyboardType: TextInputType.text,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: _heigth*0.05,),
+                Container(
+                    padding: EdgeInsets.all(12),
+                  //height: _heigth*0.2,
+                  width: _width,
+
+                  child: Column(
+                    children: <Widget>[
+                      InkWell(
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: _heigth*0.07,
+                          width: _width,
+                          color: Colors.cyanAccent,
+                          child: Text("Login",style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                          ),
+                          ),
+                        ),
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => IndexScreen()));
+                        },
+                      ),
+                      Container(
+                        height: _heigth*0.01,
                         width: _width,
-
-                    ),
-                    Container(
-                        padding: EdgeInsets.all(12),
-                      height: _heigth*0.18,
-                      width: _width,
-
-                      child: Column(
-                        children: <Widget>[
-                          InkWell(
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: _heigth*0.07,
-                              width: _width,
-                              color: Colors.cyanAccent,
-                              child: Text("Login",style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white
-                              ),
-                              ),
-                            ),
-                            onTap: (){
-                              Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => IndexScreen()));
-                            },
-                          ),
-                          Container(
-                            height: _heigth*0.01,
-                            width: _width,
-                          ),
-                          InkWell(
-
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: _heigth*0.07,
-                              width: _width,
-                              color: Colors.blueAccent,
-                              child: Text("Create Account",style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                              ),
-                              ),
-                            ),
-                            onTap: (){},
-                          ),
-                        ],
                       ),
-                    ),
+                      InkWell(
 
-
-                  ],
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: _heigth*0.07,
+                          width: _width,
+                          color: Colors.blueAccent,
+                          child: Text("Create Account",style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                          ),
+                          ),
+                        ),
+                        onTap: (){},
+                      ),
+                    ],
+                  ),
                 ),
 
-              )
-            ],
+
+              ],
+            ),
+
           ),
         );
       }),
