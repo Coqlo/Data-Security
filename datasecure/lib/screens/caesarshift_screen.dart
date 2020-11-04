@@ -12,36 +12,73 @@ class _CaesarShiftScreenState extends State <CaesarShiftScreen>{
   Widget build(BuildContext context) {
     final _heigth = MediaQuery.of(context).size.height;
     final _width = MediaQuery.of(context).size.width;
+
+
     
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("The Caesar Shift Cipher"),
-          backgroundColor: Color(0xFF19244F),
-
-        ),
-        body:  LayoutBuilder(builder: (context,contrains){
-          return Container(
-            alignment: Alignment.center,
-            width: _width,
-            height: _heigth,
-            color: Color(0xFF19244F),
-            padding: EdgeInsets.only(
-                top: _heigth*0.034,
-                bottom: _heigth*0.02,
-                left: _heigth*0.01,
-                right: _heigth*0.01
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(0xFF19244F),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
             ),
-            child: ListView(
-              children: <Widget>[
-                Container(
+            bottom: TabBar(
+              tabs: [
+                Tab(child: Text('Encryption'),),
+                Tab(icon: Text('Decryption'),),
 
-                )
               ],
             ),
-          );
-        }
-        )
-    );
+            title: Text('Caesar Cipher'),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              //encryption
+              Container(
+                color: Color(0xFF19244F),
+                child: ListView(
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          height: _heigth*0.1,
+                          width: _width,
+                          child: Text('PlainText',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 32
+                            ),),
+                        ),
+                        Container()
+                      ],
+                    ),
 
+                  ],
+                ),
+
+              ),
+
+
+
+
+
+              //decryption
+              Container(
+                color: Color(0xFF19244F),
+
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
