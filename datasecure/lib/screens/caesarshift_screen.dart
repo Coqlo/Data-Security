@@ -56,7 +56,26 @@ class _CaesarShiftScreenState extends State <CaesarShiftScreen>{
                                 fontSize: 32
                             ),),
                         ),
-                        Container()
+                        TextFormField(
+                          validator: (String value) {
+                            if (value.isEmpty)
+                              return 'Please enter a PlainText';
+                          },
+                          style: Theme.of(context).textTheme.headline6,
+                          //controller: controllerPassword,
+                          obscureText: true,
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            errorStyle: TextStyle(fontSize: 14.0),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(width: 2)
+                            ),
+
+                            filled: true,
+                            fillColor: Colors.white30,
+                          ),
+                          keyboardType: TextInputType.text,
+                        ),
                       ],
                     ),
 
