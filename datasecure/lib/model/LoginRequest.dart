@@ -13,7 +13,7 @@ class LoginRequest {
     final Map<String, dynamic> data = new Map<String, dynamic>();
 
     data['email'] = this.email;
-    data['passWord;'] = this.passWord;
+    data['passWord'] = this.passWord;
 
     return data;
   }

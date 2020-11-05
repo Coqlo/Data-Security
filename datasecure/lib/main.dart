@@ -1,7 +1,7 @@
 import 'package:datasecure/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/login_screen.dart';
+import 'screens/Auth/login_screen.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,4 +1,4 @@
-import 'package:datasecure/screens/login_screen.dart';
+import 'file:///D:/Work/DataSe/Data-Security/datasecure/lib/screens/Auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatefulWidget {

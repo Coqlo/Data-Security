@@ -4,3 +4,5 @@ bool isLoggedIn = false;
 String status;
 String token;
 String firstname;
+String lastname;
+String email;
