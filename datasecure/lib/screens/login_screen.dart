@@ -13,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   TextEditingController controllerUsername = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -28,11 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (globals.status == "200") {
         if (res.response == "Login Success") {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      IndexScreen()));
-          }
+              context, MaterialPageRoute(builder: (context) => IndexScreen()));
         } else {
           SweetAlert.show(
             context,
@@ -41,9 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
             style: SweetAlertStyle.error,
           );
         }
+      } else {
+        SweetAlert.show(
+          context,
+          title: "Error",
+          subtitle: "Login Failed",
+          style: SweetAlertStyle.error,
+        );
       }
     }
-
+  }
 
   @override
   Widget build(BuildContext context) {
