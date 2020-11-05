@@ -17,23 +17,22 @@ class _MonoAlphabeticScreenState extends State<MonoAlphabeticScreen> {
     String plainText = controllerPlainText.text;
     AmonoAlphabetic encrypt = AmonoAlphabetic(plainText);
     outputEncrypt=encrypt.MonoEncrypt(plainText);
-//    SweetAlert.show(
-//      context,
-//      title: "Text Encryption is",
-//      subtitle: outputEncrypt,
-//      style: SweetAlertStyle.success,
-//    );
+
+    SweetAlert.show(
+      context,
+      title: "A Mono Alphabetic",
+      subtitle: "Cipher text is: "+outputEncrypt,
+      style: SweetAlertStyle.success,
+    );
   }
   MonoDecrypt(){
-//    String CipherText = controllerCipherText.text;
-//    print(CipherText);
-//    int key = int.parse(controllerKeyCipherText.text);
-//    CaesarShift encrypt = CaesarShift(CipherText, key);
-//    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
+    String CipherText = controllerCipherText.text;
+    AmonoAlphabetic encrypt = AmonoAlphabetic(CipherText);
+    outputDecrypt=encrypt.MonoDecrypt(CipherText);
 //    SweetAlert.show(
 //      context,
-//      title: "Plain Text is",
-//      subtitle: outputDecrypt,
+//      title: "A Mono Alphabetic",
+//      subtitle: "Plain text is: "+outputDecrypt,
 //      style: SweetAlertStyle.success,
 //    );
 

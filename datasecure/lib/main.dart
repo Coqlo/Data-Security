@@ -1,3 +1,4 @@
+import 'package:datasecure/screens/monoalphabetic_screen.dart';
 import 'package:datasecure/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF7ebafe)
       ),
 
-      home: LoginScreen(),
+      home: MonoAlphabeticScreen(),
     );
 
   }
