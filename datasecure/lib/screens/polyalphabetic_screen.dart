@@ -1,4 +1,5 @@
 import 'package:datasecure/doing/caesarShiftCode.dart';
+import 'package:datasecure/doing/polyAlphabeticCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 
@@ -9,37 +10,34 @@ class PolyalphabeticScreen extends StatefulWidget {
 class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
   TextEditingController controllerPlainText = TextEditingController();
   TextEditingController controllerCipherText = TextEditingController();
-  TextEditingController controllerKeyPlainText = TextEditingController();
-  TextEditingController controllerKeyCipherText = TextEditingController();
+
   String outputEncrypt="";
   String outputDecrypt="";
 
   PolyEncrypt(){
 
     String plainText = controllerPlainText.text;
-    print(plainText);
-    int key = int.parse(controllerKeyPlainText.text);
-    CaesarShift encrypt = CaesarShift(plainText, key);
-    outputEncrypt=encrypt.caesarEncrypt(plainText, key);
+    PolyAlphabetic encrypt = PolyAlphabetic(plainText);
+    outputEncrypt=encrypt.PolyAlphabeticEncrypt(plainText);
     SweetAlert.show(
       context,
-      title: "Text Encryption is",
-      subtitle: outputEncrypt,
+      title: "Poly Alphabetic",
+      subtitle: "Cipher text is: "+outputEncrypt,
       style: SweetAlertStyle.success,
     );
   }
   PolyDecrypt(){
-    String CipherText = controllerCipherText.text;
-    print(CipherText);
-    int key = int.parse(controllerKeyCipherText.text);
-    CaesarShift encrypt = CaesarShift(CipherText, key);
-    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
-    SweetAlert.show(
-      context,
-      title: "Plain Text is",
-      subtitle: outputDecrypt,
-      style: SweetAlertStyle.success,
-    );
+//    String CipherText = controllerCipherText.text;
+//    print(CipherText);
+//    int key = int.parse(controllerKeyCipherText.text);
+//    CaesarShift encrypt = CaesarShift(CipherText, key);
+//    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
+//    SweetAlert.show(
+//      context,
+//      title: "Plain Text is",
+//      subtitle: outputDecrypt,
+//      style: SweetAlertStyle.success,
+//    );
 
 
   }
@@ -107,11 +105,12 @@ class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerPlainText,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a Key';
+                                            return '*Please Enter a PlainText';
                                         },
-                                        controller: controllerKeyPlainText,
+
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
