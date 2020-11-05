@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class CaesarShift {
   String text;
   int key;
