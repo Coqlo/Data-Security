@@ -3,9 +3,13 @@ import 'package:datasecure/doing/historical_screen.dart';
 import 'package:datasecure/screens/account_screen.dart';
 import 'package:datasecure/screens/caesarshift_screen.dart';
 import 'package:datasecure/screens/home_screen.dart';
+import 'package:datasecure/screens/polyalphabetic_screen.dart';
 import 'package:datasecure/screens/setting_screen.dart';
+import 'package:datasecure/screens/vigenerecipher_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
+
+import 'monoalphabetic_screen.dart';
 
 class IndexScreen extends StatefulWidget {
 
@@ -127,6 +131,8 @@ class _IndexScreenState extends State <IndexScreen>{
 
               trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
               onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => MonoAlphabeticScreen()));
               },
             ),
             ListTile(
@@ -141,6 +147,8 @@ class _IndexScreenState extends State <IndexScreen>{
 
               trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
               onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => PolyalphabeticScreen()));
               },
             ),
             ListTile(
@@ -155,6 +163,8 @@ class _IndexScreenState extends State <IndexScreen>{
 
               trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
               onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => VigenereCipherScreen()));
               },
             ),
             ListTile(

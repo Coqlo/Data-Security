@@ -1,45 +1,41 @@
+import 'package:datasecure/doing/AMonoCode.dart';
 import 'package:datasecure/doing/caesarShiftCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 
-class CaesarShiftScreen extends StatefulWidget {
-  _CaesarShiftScreenState createState() => _CaesarShiftScreenState();
+class MonoAlphabeticScreen extends StatefulWidget {
+  _MonoAlphabeticScreenState createState() => _MonoAlphabeticScreenState();
 }
 
-class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
+class _MonoAlphabeticScreenState extends State<MonoAlphabeticScreen> {
   TextEditingController controllerPlainText = TextEditingController();
   TextEditingController controllerCipherText = TextEditingController();
-  TextEditingController controllerKeyPlainText = TextEditingController();
-  TextEditingController controllerKeyCipherText = TextEditingController();
   String outputEncrypt="";
   String outputDecrypt="";
 
-  CaesarEncrypt(){
-
+  MonoEncrypt(){
     String plainText = controllerPlainText.text;
-    print(plainText);
-    int key = int.parse(controllerKeyPlainText.text);
-    CaesarShift encrypt = CaesarShift(plainText, key);
-    outputEncrypt=encrypt.caesarEncrypt(plainText, key);
-    SweetAlert.show(
-      context,
-      title: "Text Encryption is",
-      subtitle: outputEncrypt,
-      style: SweetAlertStyle.success,
-    );
+    AmonoAlphabetic encrypt = AmonoAlphabetic(plainText);
+    outputEncrypt=encrypt.MonoEncrypt(plainText);
+//    SweetAlert.show(
+//      context,
+//      title: "Text Encryption is",
+//      subtitle: outputEncrypt,
+//      style: SweetAlertStyle.success,
+//    );
   }
-  CaesarDecrypt(){
-    String CipherText = controllerCipherText.text;
-    print(CipherText);
-    int key = int.parse(controllerKeyCipherText.text);
-    CaesarShift encrypt = CaesarShift(CipherText, key);
-    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
-    SweetAlert.show(
-      context,
-      title: "Plain Text is",
-      subtitle: outputDecrypt,
-      style: SweetAlertStyle.success,
-    );
+  MonoDecrypt(){
+//    String CipherText = controllerCipherText.text;
+//    print(CipherText);
+//    int key = int.parse(controllerKeyCipherText.text);
+//    CaesarShift encrypt = CaesarShift(CipherText, key);
+//    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
+//    SweetAlert.show(
+//      context,
+//      title: "Plain Text is",
+//      subtitle: outputDecrypt,
+//      style: SweetAlertStyle.success,
+//    );
 
 
   }
@@ -72,10 +68,15 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                 ),
               ],
             ),
-            title: Text('Caesar Cipher'),
+            title: Text('A Mono-alphabetic'),
           ),
           body: TabBarView(
             children: <Widget>[
+
+
+
+
+
               //encryption
               Container(
                 height: _heigth/2,
@@ -94,6 +95,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                         ),
                         enabled: false,
                       ),
+
                       Container(
                         padding: EdgeInsets.all(12),
                         child: Column(
@@ -104,54 +106,11 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
-
-                                        validator: (String value) {
-                                          if (value.isEmpty)
-                                            return '*Please Enter a input';
-                                        },
                                         controller: controllerPlainText,
-
-                                        style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
-                                      ),
-                                    )),
-
-                              ],
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
-                      ListTile(
-                        title: Text(
-                          "Key",
-                          style: TextStyle(
-                              fontSize: _width / 15.0,
-                              color: Color(0xFF160c78)),
-                        ),
-                        enabled: false,
-                      ),
-
-                      Container(
-                        padding: EdgeInsets.all(12),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      child: TextFormField(
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a Key';
+                                            return '*Please Enter a Plain Text';
                                         },
-                                        controller: controllerKeyPlainText,
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
@@ -168,7 +127,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                       ),
                       Center(
                           child: GestureDetector(
-                              onTap: () => CaesarEncrypt(),
+                              onTap: () => MonoEncrypt(),
                               child: Container(
                                   width: 500.0,
                                   height: 50,
@@ -191,17 +150,26 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                       ]),
                                   child: Center(
                                       child: Text(
-                                    ' Confirm',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: _width / 22.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  )))))
+                                        ' Confirm',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: _width / 22.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      )))))
                     ]),
                   ),
                 ),
               ),
+
+
+
+
+
+
+
+
+
 
               //decryption
               Container(
@@ -251,51 +219,9 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                         ),
 
                       ),
-                      ListTile(
-                        title: Text(
-                          "Key",
-                          style: TextStyle(
-                              fontSize: _width / 15.0,
-                              color: Color(0xFF160c78)),
-                        ),
-                        enabled: false,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(12),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      child: TextFormField(
-                                        validator: (String value) {
-                                          if (value.isEmpty)
-                                            return '*Please Enter a input';
-                                        },
-                                        controller: controllerKeyCipherText,
-
-                                        style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
-                                      ),
-                                    )),
-
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
                       Center(
                           child: GestureDetector(
-                              onTap: () => CaesarDecrypt(),
+                              onTap: () => MonoDecrypt(),
                               child: Container(
                                   width: 500.0,
                                   height: 50,

@@ -2,11 +2,11 @@ import 'package:datasecure/doing/caesarShiftCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 
-class CaesarShiftScreen extends StatefulWidget {
-  _CaesarShiftScreenState createState() => _CaesarShiftScreenState();
+class VigenereCipherScreen extends StatefulWidget {
+  _VigebereCipherScreenState createState() => _VigebereCipherScreenState();
 }
 
-class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
+class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
   TextEditingController controllerPlainText = TextEditingController();
   TextEditingController controllerCipherText = TextEditingController();
   TextEditingController controllerKeyPlainText = TextEditingController();
@@ -14,7 +14,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
   String outputEncrypt="";
   String outputDecrypt="";
 
-  CaesarEncrypt(){
+  VigenereEncrypt(){
 
     String plainText = controllerPlainText.text;
     print(plainText);
@@ -28,7 +28,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
       style: SweetAlertStyle.success,
     );
   }
-  CaesarDecrypt(){
+  VigenereDecrypt(){
     String CipherText = controllerCipherText.text;
     print(CipherText);
     int key = int.parse(controllerKeyCipherText.text);
@@ -72,7 +72,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                 ),
               ],
             ),
-            title: Text('Caesar Cipher'),
+            title: Text('Vigenere Cipher'),
           ),
           body: TabBarView(
             children: <Widget>[
@@ -88,48 +88,6 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                       ListTile(
                         title: Text(
                           "Plain Text",
-                          style: TextStyle(
-                              fontSize: _width / 15.0,
-                              color: Color(0xFF160c78)),
-                        ),
-                        enabled: false,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(12),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      child: TextFormField(
-
-                                        validator: (String value) {
-                                          if (value.isEmpty)
-                                            return '*Please Enter a input';
-                                        },
-                                        controller: controllerPlainText,
-
-                                        style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
-                                      ),
-                                    )),
-
-                              ],
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
-                      ListTile(
-                        title: Text(
-                          "Key",
                           style: TextStyle(
                               fontSize: _width / 15.0,
                               color: Color(0xFF160c78)),
@@ -158,7 +116,6 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                             fontFamily: 'ThaiSansNeue'),
                                       ),
                                     )),
-
                               ],
                             ),
 
@@ -168,7 +125,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                       ),
                       Center(
                           child: GestureDetector(
-                              onTap: () => CaesarEncrypt(),
+                              onTap: () => VigenereEncrypt(),
                               child: Container(
                                   width: 500.0,
                                   height: 50,
@@ -191,13 +148,13 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                       ]),
                                   child: Center(
                                       child: Text(
-                                    ' Confirm',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: _width / 22.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  )))))
+                                        ' Confirm',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: _width / 22.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      )))))
                     ]),
                   ),
                 ),
@@ -251,51 +208,9 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                         ),
 
                       ),
-                      ListTile(
-                        title: Text(
-                          "Key",
-                          style: TextStyle(
-                              fontSize: _width / 15.0,
-                              color: Color(0xFF160c78)),
-                        ),
-                        enabled: false,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(12),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      child: TextFormField(
-                                        validator: (String value) {
-                                          if (value.isEmpty)
-                                            return '*Please Enter a input';
-                                        },
-                                        controller: controllerKeyCipherText,
-
-                                        style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
-                                      ),
-                                    )),
-
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
                       Center(
                           child: GestureDetector(
-                              onTap: () => CaesarDecrypt(),
+                              onTap: () => VigenereDecrypt(),
                               child: Container(
                                   width: 500.0,
                                   height: 50,
