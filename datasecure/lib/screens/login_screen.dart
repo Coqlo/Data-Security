@@ -1,3 +1,4 @@
+import 'package:datasecure/screens/createAccount_screen.dart';
 import 'package:datasecure/screens/index_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -171,7 +172,10 @@ class _LoginScreenState extends State <LoginScreen>{
                           ),
                           ),
                         ),
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => CreateAccount()));
+                        },
                       ),
                     ],
                   ),

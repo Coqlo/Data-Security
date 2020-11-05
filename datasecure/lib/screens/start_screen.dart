@@ -60,7 +60,7 @@ class _StartScreenState extends State <StartScreen>{
                     ),
                     Container(
                       alignment: Alignment.center,
-                      height: _heigth*0.08,
+                      height: _heigth*0.09,
                       width: _width,
 
                       child: Text('Data security refers to the process of protecting data from unauthorized access and data corruption throughout its lifecycle. ',

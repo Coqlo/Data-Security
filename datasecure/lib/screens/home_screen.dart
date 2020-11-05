@@ -9,12 +9,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State <HomeScreen>{
 
-
-
   @override
   Widget build(BuildContext context) {
     final _heigth = MediaQuery.of(context).size.height;
     final _width = MediaQuery.of(context).size.width;
+
+
 
 
     return Scaffold(
