@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 class CaesarShift {
   String text;
@@ -27,10 +25,33 @@ class CaesarShift {
   }
 
   String caesarEncrypt(String text, int key) {
-    String output;
+    String output="";
+    int num;
     int lent = text.length;
+    //print(String.fromCharCode(65));
     for (int i = 0; i < lent; i++) {
 
+     // print(((text.codeUnitAt(i)-65)+key)%26);
+      num=((text.codeUnitAt(i)-65)+key)%26;
+      num=num+65;
+      output+=String.fromCharCode(num);
     }
+    return output;
   }
+
+  String caesarDecrypt(String text, int key) {
+    String output="";
+    int num;
+    int lent = text.length;
+    //print(String.fromCharCode(65));
+    for (int i = 0; i < lent; i++) {
+
+      // print(((text.codeUnitAt(i)-65)+key)%26);
+      num=((text.codeUnitAt(i)-65)-key)%26;
+      num=num+65;
+      output+=String.fromCharCode(num);
+    }
+    return output;
+  }
+
 }
