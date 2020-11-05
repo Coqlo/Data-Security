@@ -45,7 +45,7 @@ class AmonoAlphabetic {
       for(int j=0; j<lengthCipherText; j++){
 
         if(key[i]==cipherText[j]){
-          print(j);
+          num=j;
         }
       }
 
