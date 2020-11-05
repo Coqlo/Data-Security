@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
 import 'package:sweetalert/sweetalert.dart';
 
+import 'createAccount_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
 
@@ -210,14 +212,17 @@ class _LoginScreenState extends State <LoginScreen>{
                           height: _heigth*0.07,
                           width: _width,
                           color: Colors.blueAccent,
-                          child: Text("Create Account",style: TextStyle(
+                          child: Text("Sign up",style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: Colors.white
                           ),
                           ),
                         ),
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => CreateAccount()));
+                        },
                       ),
                     ],
                   ),
