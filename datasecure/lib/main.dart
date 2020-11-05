@@ -1,6 +1,8 @@
 import 'package:datasecure/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/login_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF7ebafe)
       ),
 
-      home: StartScreen(),
+      home: LoginScreen(),
     );
 
   }

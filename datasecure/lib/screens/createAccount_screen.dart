@@ -135,7 +135,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                           ),
                           TextFormField(
                             validator: (String value) {
-                              if (value.isEmpty) return '*Please enter a Firstname';
+                              if (value.isEmpty) return '*Please enter Firstname';
                             },
                             style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
                             controller: controllerFistname,
@@ -164,7 +164,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                           ),
                           TextFormField(
                             validator: (String value) {
-                              if (value.isEmpty) return '*Please enter a Lastname';
+                              if (value.isEmpty) return '*Please enter Lastname';
                             },
                             style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
                             controller: controllerLastname,
@@ -193,7 +193,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                           ),
                           TextFormField(
                             validator: (String value) {
-                              if (value.isEmpty) return '*Please enter a Email';
+                              if (value.isEmpty) return '*Please enter Email';
                               if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                   .hasMatch(value)) return 'Please a valid Email';
                             },
@@ -224,7 +224,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                           ),
                           TextFormField(
                             validator: (String value) {
-                              if (value.isEmpty) return '*Please enter a Password';
+                              if (value.isEmpty) return '*Please enter Password';
                               if (value.length < 8)
                                 return '*Passwords at least 8 char. Please try again';
                               if (!RegExp("^[a-zA-Z0-9]").hasMatch(value))
@@ -309,19 +309,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                                     color: Colors.white),
                               ),
                             ),
-                            onTap: () => {
-                              if (controllerPassword == controllerPassword)
-                                {Register()}
-                              else
-                                {
-                                  SweetAlert.show(
-                                    context,
-                                    title: "รหัสผ่านไม่ตรงกัน",
-                                    subtitle: "กรุณาลองใหม่อีกครั้ง",
-                                    style: SweetAlertStyle.error,
-                                  )
-                                }
-                            },
+                            onTap: () => {Register()},
                           ),
                         ],
                       ),
@@ -329,7 +317,6 @@ class _CreateAccountScreen extends State<CreateAccount> {
                   ));
             },
           ),
-
         ],
       ),
     );
