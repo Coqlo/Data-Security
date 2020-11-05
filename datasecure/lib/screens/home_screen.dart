@@ -23,7 +23,7 @@ class _HomeScreenState extends State <HomeScreen>{
             alignment: Alignment.center,
             width: _width,
             height: _heigth,
-            color: Color(0xFF050638),
+            color: Color(0xFF131426),
             padding: EdgeInsets.only(
                 top: _heigth*0.034,
                 bottom: _heigth*0.02,

@@ -1,5 +1,6 @@
 import 'package:datasecure/model/RegisterRequest.dart';
 import 'package:datasecure/model/RegisterResponse.dart';
+import 'package:datasecure/screens/Auth/registersuccess.dart';
 import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
 import '../../controller/API.dart';
@@ -39,27 +40,21 @@ class _CreateAccountScreen extends State<CreateAccount> {
       print("status: $res.responseStatus");
       if (globals.status == "200") {
         if (res.response == "Registration Success!!!") {
-          SweetAlert.show(context,
-              title: "ลงทะเบียนสำเร็จ",
-              style: SweetAlertStyle.success, onPress: (bool isConfirm) {
-            if (isConfirm) {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
-            }
-          });
+                  MaterialPageRoute(builder: (context) => RegisterSuccess()));
         } else {
           SweetAlert.show(
             context,
-            title: "ลงทะเบียนไม่สำเร็จ",
-            subtitle: "กรุณาลองใหม่อีกครั้ง",
+            title: "Register Failed",
+            subtitle: "Please try again",
             style: SweetAlertStyle.error,
           );
         }
       } else {
         SweetAlert.show(
           context,
-          title: "ลงทะเบียนไม่สำเร็จ",
-          subtitle: "กรุณาลองใหม่อีกครั้ง",
+          title: "Register Failed",
+          subtitle: "Please try again",
           style: SweetAlertStyle.error,
         );
       }

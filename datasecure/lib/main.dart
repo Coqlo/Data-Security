@@ -1,3 +1,5 @@
+import 'package:datasecure/screens/Auth/registersuccess.dart';
+import 'package:datasecure/screens/index_screen.dart';
 import 'package:datasecure/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 

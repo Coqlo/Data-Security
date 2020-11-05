@@ -30,7 +30,7 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget bottomNavBar = BottomNavigationBar(
 
 
-      backgroundColor: Color(0xFF010116),
+      backgroundColor: Color(0xFF131426),
       currentIndex: currentIndex,
       onTap: (int index){
         setState(() {
@@ -57,9 +57,8 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget myDrawer= Drawer(
       
       child: Container(
-        color: Color(0xFF050638),
+        color: Color(0xFF131426),
         child: ListView(
-
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -224,7 +223,7 @@ class _IndexScreenState extends State <IndexScreen>{
       drawer: myDrawer,
       appBar: AppBar(
        title: Text('Data Security'),
-        backgroundColor: Color(0xFF050638),
+        backgroundColor: Color(0xFF2f304e),
       ),
       body: pages[currentIndex],
       bottomNavigationBar: bottomNavBar,
