@@ -13,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   TextEditingController controllerUsername = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -20,25 +21,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Login() async {
     if (_formKey.currentState.validate()) {
-      String username = controllerUsername.text;
+      String email = controllerUsername.text;
       String password = controllerPassword.text;
       LoginResponse res =
-          await api.login(LoginRequest(username: username, password: password));
+          await api.login(LoginRequest(email: email, passWord: password));
       if (globals.status == "200") {
-        if (res.response == "login success") {
-          if (res.utypeid == 1) {
-            globals.firstname = res.firstname;
-            Navigator.pushNamed(context, '/home-staff-page');
-          } else {
-            if (res.utypeid == 2) {
-              globals.firstname = res.firstname;
-              Navigator.pushNamed(context, '/home-student-page');
-            } else {
-              if (res.utypeid == 3) {
-                globals.firstname = res.firstname;
-                Navigator.pushNamed(context, '/home-professor-page');
-              }
-            }
+        if (res.response == "Login Success") {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      IndexScreen()));
           }
         } else {
           SweetAlert.show(
@@ -50,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         }
       }
     }
-  }
+
 
   @override
   Widget build(BuildContext context) {

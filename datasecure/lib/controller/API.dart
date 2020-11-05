@@ -29,14 +29,14 @@ class API {
   }
 
   Future<LoginResponse> login(LoginRequest data) async {
-    String url = 'user/login';
+    String url = 'signUp';
 
     Map<String, dynamic> loginres = await connect(data.toJson(), url);
     return LoginResponse.fromJson(loginres);
   }
 
   Future<RegisterResponse> register(RegisterRequest data) async {
-    String url = 'signUp';
+    String url = 'login/registration';
 
     Map<String, dynamic> regisres = await connect(data.toJson(), url);
     return RegisterResponse.fromJson(regisres);

@@ -1,19 +1,19 @@
 class LoginRequest {
 
-  String username;
-  String password;
+  String email;
+  String passWord;
 
   LoginRequest(
       {
-        this.username,
-        this.password,
+        this.email,
+        this.passWord,
       });
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
 
-    data['username'] = this.username;
-    data['password'] = this.password;
+    data['email'] = this.email;
+    data['passWord;'] = this.passWord;
 
     return data;
   }
