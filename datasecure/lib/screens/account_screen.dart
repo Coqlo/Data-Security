@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:datasecure/global/global.dart' as globals;
+
 
 class AccountScreen extends StatefulWidget {
 
@@ -51,7 +53,7 @@ class _AccountScreenState extends State <AccountScreen>{
                       fontWeight: FontWeight.bold,
                       color: Colors.white
                     ),),
-                    title: Text('???????????????????',style: TextStyle(
+                    title: Text('${globals.firstname}\t\t${globals.lastname}',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.lightBlue

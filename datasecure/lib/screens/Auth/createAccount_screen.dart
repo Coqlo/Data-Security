@@ -2,7 +2,7 @@ import 'package:datasecure/model/RegisterRequest.dart';
 import 'package:datasecure/model/RegisterResponse.dart';
 import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
-import '../controller/API.dart';
+import '../../controller/API.dart';
 import 'login_screen.dart';
 import 'package:sweetalert/sweetalert.dart';
 
@@ -116,7 +116,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                                 Text(
                                   "Sign Up",
                                   style: TextStyle(
-                                      fontSize: 45,
+                                      fontSize: _heigth*0.06,
                                       color: Color(0xFFffffff),
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -126,7 +126,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                                 Text(
                                   "Create your account",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: _heigth*0.03,
                                       color: Color(0xFFffffff),
                                       fontWeight: FontWeight.normal),
                                 ),
@@ -137,12 +137,12 @@ class _CreateAccountScreen extends State<CreateAccount> {
                             validator: (String value) {
                               if (value.isEmpty) return '*Please enter Firstname';
                             },
-                            style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
+                            style: TextStyle(fontSize: _heigth*0.025,color: Color(0xFF7ebafe)),
                             controller: controllerFistname,
                             obscureText: false,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Firstname',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -166,12 +166,12 @@ class _CreateAccountScreen extends State<CreateAccount> {
                             validator: (String value) {
                               if (value.isEmpty) return '*Please enter Lastname';
                             },
-                            style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
+                            style: TextStyle(fontSize: _heigth*0.025,color: Color(0xFF7ebafe)),
                             controller: controllerLastname,
                             obscureText: false,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Lastname',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -197,12 +197,12 @@ class _CreateAccountScreen extends State<CreateAccount> {
                               if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                   .hasMatch(value)) return 'Please a valid Email';
                             },
-                            style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
+                            style: TextStyle(fontSize: _heigth*0.025,color: Color(0xFF7ebafe)),
                             controller: controllerEmail,
                             obscureText: false,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Email',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -230,12 +230,12 @@ class _CreateAccountScreen extends State<CreateAccount> {
                               if (!RegExp("^[a-zA-Z0-9]").hasMatch(value))
                                 return 'Please a valid Password [A-Z,a-z,0-9]';
                             },
-                            style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
+                            style: TextStyle(fontSize: _heigth*0.025,color: Color(0xFF7ebafe)),
                             controller: controllerPassword,
                             obscureText: true,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Password',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -266,12 +266,12 @@ class _CreateAccountScreen extends State<CreateAccount> {
                               if (!RegExp("^[a-zA-Z0-9]").hasMatch(value))
                                 return 'Please a valid Password [A-Z,a-z,0-9]';
                             },
-                            style: TextStyle(fontSize: 20,color: Color(0xFF7ebafe)),
+                            style: TextStyle(fontSize: _heigth*0.025,color: Color(0xFF7ebafe)),
                             controller: controllerPassConfirm,
                             obscureText: true,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Confirm Password',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -304,7 +304,7 @@ class _CreateAccountScreen extends State<CreateAccount> {
                               child: Text(
                                 "Sign up",
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: _heigth*0.035,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),

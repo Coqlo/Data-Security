@@ -1,6 +1,7 @@
 import 'package:datasecure/controller/API.dart';
 import 'package:datasecure/model/LoginRequest.dart';
 import 'package:datasecure/model/LoginResponse.dart';
+import 'package:datasecure/screens/Auth/forgotpass_1.dart';
 import 'package:datasecure/screens/index_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
@@ -13,7 +14,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   TextEditingController controllerUsername = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -22,28 +22,35 @@ class _LoginScreenState extends State<LoginScreen> {
   Login() async {
     if (_formKey.currentState.validate()) {
       String email = controllerUsername.text;
-      String password = controllerPassword.text;
+      String passWord = controllerPassword.text;
       LoginResponse res =
-          await api.login(LoginRequest(email: email, passWord: password));
+          await api.login(LoginRequest(email: email, passWord: passWord));
       if (globals.status == "200") {
         if (res.response == "Login Success") {
+          globals.firstname=res.firstName;
+          globals.lastname=res.lastName;
+          globals.email=res.email;
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      IndexScreen()));
-          }
+              context, MaterialPageRoute(builder: (context) => IndexScreen()));
+          print(globals.email);
         } else {
           SweetAlert.show(
             context,
             title: "Error",
-            subtitle: "Login Failed",
+            subtitle: "Login Failed!",
             style: SweetAlertStyle.error,
           );
         }
+      } else {
+        SweetAlert.show(
+          context,
+          title: "Error",
+          subtitle: "Login Failed",
+          style: SweetAlertStyle.error,
+        );
       }
     }
-
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Text(
                                   "Butterfly Team",
                                   style: TextStyle(
-                                    fontSize: 40,
+                                    fontSize: _heigth*0.055,
                                     color: Color(0xFFffffff),
                                   ),
                                 ),
@@ -114,12 +121,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return 'Please a valid Email';
                             },
                             style: TextStyle(
-                                fontSize: 20, color: Color(0xFF7ebafe)),
+                                fontSize: _heigth*0.025, color: Color(0xFF7ebafe)),
                             controller: controllerUsername,
                             obscureText: false,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Email',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -149,12 +156,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return 'Please a valid Password [A-Z,a-z,0-9]';
                             },
                             style: TextStyle(
-                                fontSize: 20, color: Color(0xFF7ebafe)),
+                                fontSize: _heigth*0.025, color: Color(0xFF7ebafe)),
                             controller: controllerPassword,
                             obscureText: true,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: 14.0),
+                              errorStyle: TextStyle(fontSize: _heigth*0.019),
                               labelText: 'Password',
                               labelStyle: TextStyle(
                                 color: Colors.grey,
@@ -172,8 +179,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             keyboardType: TextInputType.text,
                           ),
+                          FlatButton(
+                              onPressed: () => { Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Forgotpassword()))},
+                              child: Text(
+                                'Forgot password?',
+                                style: TextStyle(
+                                  fontSize: _heigth*0.019,
+                                  color: Color(0xFFe4357e),
+                                ),
+                              )),
                           SizedBox(
-                            height: _heigth * 0.05,
+                            height: _heigth * 0.005,
                           ),
                           InkWell(
                             child: Container(
@@ -187,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Text(
                                 "Login",
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: _heigth*0.035,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
@@ -200,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text(
                                 "don't have an account?",
                                 style: TextStyle(
-                                  fontSize: 15.0,
+                                  fontSize: _heigth*0.019,
                                   color: Colors.white,
                                 ),
                               ),
@@ -215,7 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Text(
                                     'Sign up',
                                     style: TextStyle(
-                                      fontSize: 15.0,
+                                      fontSize: _heigth*0.02,
                                       color: Color(0xFF7ebafe),
                                     ),
                                   )),

@@ -8,6 +8,7 @@ import 'package:datasecure/screens/setting_screen.dart';
 import 'package:datasecure/screens/vigenerecipher_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
+import 'package:datasecure/global/global.dart' as globals;
 
 import 'monoalphabetic_screen.dart';
 
@@ -73,12 +74,12 @@ class _IndexScreenState extends State <IndexScreen>{
                   ),
                 ),
               ),
-              accountName: Text('Firstname Lastname',
+              accountName: Text('${globals.firstname}\t\t${globals.lastname}',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25
               ),),
-              accountEmail: Text('emailaddress@gmail.com',style: TextStyle(
+              accountEmail: Text('${globals.email}',style: TextStyle(
                 fontSize: 18
               ),),
 

@@ -29,7 +29,7 @@ class API {
   }
 
   Future<LoginResponse> login(LoginRequest data) async {
-    String url = 'signUp';
+    String url = 'login/signIn';
 
     Map<String, dynamic> loginres = await connect(data.toJson(), url);
     return LoginResponse.fromJson(loginres);
