@@ -29,12 +29,12 @@ class _MonoAlphabeticScreenState extends State<MonoAlphabeticScreen> {
     String CipherText = controllerCipherText.text;
     AmonoAlphabetic encrypt = AmonoAlphabetic(CipherText);
     outputDecrypt=encrypt.MonoDecrypt(CipherText);
-//    SweetAlert.show(
-//      context,
-//      title: "A Mono Alphabetic",
-//      subtitle: "Plain text is: "+outputDecrypt,
-//      style: SweetAlertStyle.success,
-//    );
+    SweetAlert.show(
+      context,
+      title: "A Mono Alphabetic",
+      subtitle: "Plain text is: "+outputDecrypt,
+      style: SweetAlertStyle.success,
+    );
 
 
   }

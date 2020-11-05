@@ -46,10 +46,10 @@ class AmonoAlphabetic {
 
         if(key[i]==cipherText[j]){
           num=j;
+          output+=plainText[num];
+          break;
         }
       }
-
-
 
     }
     return output;

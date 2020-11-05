@@ -1,4 +1,4 @@
-import 'file:///D:/Work/DataSe/Data-Security/datasecure/lib/screens/Auth/login_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatefulWidget {
@@ -122,8 +122,7 @@ class _StartScreenState extends State <StartScreen>{
 
                             ),
                             onTap: (){
-                              Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
                             },
                           )
                         ],
