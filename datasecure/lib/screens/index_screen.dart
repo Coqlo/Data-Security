@@ -1,4 +1,5 @@
 
+import 'package:datasecure/doing/historical_screen.dart';
 import 'package:datasecure/screens/account_screen.dart';
 import 'package:datasecure/screens/caesarshift_screen.dart';
 import 'package:datasecure/screens/home_screen.dart';
@@ -24,7 +25,7 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget bottomNavBar = BottomNavigationBar(
 
 
-      backgroundColor: Color(0xFF19244F),
+      backgroundColor: Color(0xFF050638),
       currentIndex: currentIndex,
       onTap: (int index){
         setState(() {
@@ -51,7 +52,7 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget myDrawer= Drawer(
       
       child: Container(
-        color: Color(0xFF19244F),
+        color: Color(0xFF050638),
         child: ListView(
 
           padding: EdgeInsets.zero,
@@ -78,11 +79,27 @@ class _IndexScreenState extends State <IndexScreen>{
               ),),
 
               decoration: BoxDecoration(
-                color: Color(0xFF19244F),
+                color: Color(0xFF050638),
               ),
             ),
             ListTile(
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
+              leading: Icon(Icons.book,color: Colors.white,),
+              title: Text('Historical Cipher',style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white
+              ),
+              ),
+
+              trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => HistoricalScreen()));
+              },
+            ),
+            Divider(),
+            ListTile(
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('Shift Cipher',style: TextStyle(
                 fontSize: 16,
@@ -100,7 +117,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Mono-alphabetic Substitution Cipher',style: TextStyle(
                   fontSize: 16,
@@ -114,7 +131,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Polyalphabetic Substitution Cipher',style: TextStyle(
                   fontSize: 16,
@@ -128,7 +145,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('Vigenère Cipher',style: TextStyle(
                   fontSize: 16,
@@ -142,7 +159,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Permutation Cipher',style: TextStyle(
                   fontSize: 16,
@@ -156,7 +173,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A One-time Pad',style: TextStyle(
                   fontSize: 16,
@@ -172,7 +189,7 @@ class _IndexScreenState extends State <IndexScreen>{
 
             Divider(height: 4,),
             ListTile(
-              tileColor: Color(0xFF19244F),
+              tileColor: Color(0xFF050638),
               leading: Icon(Icons.settings,color: Colors.white,),
               title: Text('Sing out',style: TextStyle(
                   fontSize: 20,
@@ -196,7 +213,7 @@ class _IndexScreenState extends State <IndexScreen>{
       drawer: myDrawer,
       appBar: AppBar(
        title: Text('Data Security'),
-        backgroundColor: Color(0xFF19244F),
+        backgroundColor: Color(0xFF050638),
       ),
       body: pages[currentIndex],
       bottomNavigationBar: bottomNavBar,

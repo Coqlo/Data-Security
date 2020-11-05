@@ -18,7 +18,7 @@ class _StartScreenState extends State <StartScreen>{
         return Container(
           width: _width,
           height: _heigth,
-          color: Color(0xFF19244F),
+          color: Color(0xFF050638),
           padding: EdgeInsets.only(
               top: _heigth*0.034,
               bottom: _heigth*0.02,
@@ -31,7 +31,7 @@ class _StartScreenState extends State <StartScreen>{
               Container(
                 height: _heigth*0.945,
                 width: _width,
-                color: Color(0xFF19244F),
+                color: Color(0xFF050638),
                 child: Column(
                   children: <Widget>[
                     Container(

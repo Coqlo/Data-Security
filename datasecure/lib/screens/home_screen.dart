@@ -23,7 +23,7 @@ class _HomeScreenState extends State <HomeScreen>{
             alignment: Alignment.center,
             width: _width,
             height: _heigth,
-            color: Color(0xFF19244F),
+            color: Color(0xFF050638),
             padding: EdgeInsets.only(
                 top: _heigth*0.034,
                 bottom: _heigth*0.02,
@@ -33,7 +33,7 @@ class _HomeScreenState extends State <HomeScreen>{
             child: ListView(
                 children: <Widget>[
                   Card(
-                    color: Color(0xFF19244F),
+                    color: Color(0xFF050638),
                     elevation: 0,
                     child: Text('Why Data Security?',
                       style: TextStyle(
@@ -44,7 +44,7 @@ class _HomeScreenState extends State <HomeScreen>{
                   ),
                  Divider(),
                  Card(
-                   color: Color(0xFF19244F),
+                   color: Color(0xFF050638),
                    elevation: 3,
                    child: ListTile(
                      leading: CircleAvatar(
@@ -60,7 +60,7 @@ class _HomeScreenState extends State <HomeScreen>{
                  ),
                   Divider(),
                   Card(
-                    color: Color(0xFF19244F),
+                    color: Color(0xFF050638),
                     elevation: 0,
                     child: Text('Data Security Solutions?',
                       style: TextStyle(
@@ -71,7 +71,7 @@ class _HomeScreenState extends State <HomeScreen>{
                   ),
                   Divider(),
                   Card(
-                      color: Color(0xFF19244F),
+                      color: Color(0xFF050638),
                       elevation: 3,
                       child: ListTile(
                         trailing: CircleAvatar(
@@ -90,7 +90,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     onTap: ()=> launch('https://www.microfocus.com/en-us/assets/security/cloud-data-security'),
 
                     child: Card(
-                      color: Color(0xFF19244F),
+                      color: Color(0xFF050638),
                       elevation: 0,
                       child: Text('Cloud data security',
                         style: TextStyle(
@@ -102,7 +102,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     ),
                   ),
                   Card(
-                    color: Color(0xFF19244F),
+                    color: Color(0xFF050638),
                     elevation: 0,
                     child: Text('Protection platform that allows you to move to the cloud securely while protecting data in cloud applications.',
                       style: TextStyle(
@@ -118,7 +118,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     onTap: ()=> launch('https://www.microfocus.com/en-us/products/voltage-data-encryption-security/overview'),
 
                     child: Card(
-                      color: Color(0xFF19244F),
+                      color: Color(0xFF050638),
                       elevation: 0,
                       child: Text('Data encryption',
                         style: TextStyle(
@@ -130,7 +130,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     ),
                   ),
                   Card(
-                    color: Color(0xFF19244F),
+                    color: Color(0xFF050638),
                     elevation: 0,
                     child: Text(' Data-centric and tokenization security solutions that protect data across enterprise, cloud, mobile and big data environments',
                       style: TextStyle(
@@ -146,7 +146,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     onTap: ()=> launch('https://www.microfocus.com/en-us/assets/security/cloud-data-security'),
 
                     child: Card(
-                      color: Color(0xFF19244F),
+                      color: Color(0xFF050638),
                       elevation: 0,
                       child: Text('Hardware security module ',
                         style: TextStyle(
@@ -158,7 +158,7 @@ class _HomeScreenState extends State <HomeScreen>{
                     ),
                   ),
                   Card(
-                    color: Color(0xFF19244F),
+                    color: Color(0xFF050638),
                     elevation: 0,
                     child: Text('Hardware security module that guards financial data and meets industry security and compliance requirements.',
                       style: TextStyle(

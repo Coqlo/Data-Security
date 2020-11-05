@@ -24,7 +24,7 @@ class _AccountScreenState extends State <AccountScreen>{
             alignment: Alignment.center,
             width: _width,
             height: _heigth,
-            color: Color(0xFF19244F),
+            color: Color(0xFF050638),
             padding: EdgeInsets.only(
                 top: _heigth*0.034,
                 bottom: _heigth*0.02,
@@ -45,7 +45,7 @@ class _AccountScreenState extends State <AccountScreen>{
                 ),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF19244F),
+                    tileColor: Color(0xFF050638),
                     leading: Text('Name: ',style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -60,7 +60,7 @@ class _AccountScreenState extends State <AccountScreen>{
                 ),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF19244F),
+                    tileColor: Color(0xFF050638),
                     leading: Text('History: ',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -75,7 +75,7 @@ class _AccountScreenState extends State <AccountScreen>{
                 ),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF19244F),
+                    tileColor: Color(0xFF050638),
                     leading: Text('BirthDay: ',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

@@ -22,7 +22,7 @@ class _SettingScreenState extends State <SettingScreen>{
             alignment: Alignment.center,
             width: _width,
             height: _heigth,
-            color: Color(0xFF19244F),
+            color: Color(0xFF050638),
             padding: EdgeInsets.only(
                 top: _heigth*0.034,
                 bottom: _heigth*0.02,
