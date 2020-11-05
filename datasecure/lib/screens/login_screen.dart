@@ -206,7 +206,6 @@ class _LoginScreenState extends State <LoginScreen>{
                         width: _width,
                       ),
                       InkWell(
-
                         child: Container(
                           alignment: Alignment.center,
                           height: _heigth*0.07,

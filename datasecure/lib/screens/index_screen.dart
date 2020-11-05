@@ -25,7 +25,7 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget bottomNavBar = BottomNavigationBar(
 
 
-      backgroundColor: Color(0xFF050638),
+      backgroundColor: Color(0xFF010116),
       currentIndex: currentIndex,
       onTap: (int index){
         setState(() {
@@ -190,7 +190,7 @@ class _IndexScreenState extends State <IndexScreen>{
             Divider(height: 4,),
             ListTile(
               tileColor: Color(0xFF050638),
-              leading: Icon(Icons.settings,color: Colors.white,),
+              leading: Icon(Icons.exit_to_app,color: Colors.redAccent,),
               title: Text('Sing out',style: TextStyle(
                   fontSize: 20,
                 color: Colors.white
@@ -199,7 +199,7 @@ class _IndexScreenState extends State <IndexScreen>{
               subtitle: Text('ออกจากการใช้งาน',style: TextStyle(
                 color: Colors.white,
               ),),
-              trailing: Icon(Icons.exit_to_app,color: Colors.red,),
+              trailing: Icon(Icons.keyboard_arrow_right,color: Colors.red,),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();

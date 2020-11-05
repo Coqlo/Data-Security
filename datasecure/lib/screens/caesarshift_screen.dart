@@ -145,14 +145,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                   width: 500.0,
                                   height: 50,
                                   decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff00c6ff),
-                                          Color(0xFF5c3dd9)
-                                        ],
-                                        begin: Alignment.centerLeft,
-                                        end: Alignment.centerRight,
-                                      ),
+                                      color: Colors.grey,
                                       borderRadius: BorderRadius.circular(20),
                                       boxShadow: [
                                         BoxShadow(
