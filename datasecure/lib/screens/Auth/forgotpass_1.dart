@@ -1,6 +1,10 @@
 import 'package:datasecure/controller/API.dart';
+import 'package:datasecure/model/ForgotpassRequest.dart';
+import 'package:datasecure/model/ForgotpassResponse.dart';
 import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
+import 'package:sweetalert/sweetalert.dart';
+import 'forgotpass_2.dart';
 
 
 class Forgotpassword extends StatefulWidget {
@@ -17,10 +21,30 @@ class _ForgotpasswordState extends State<Forgotpassword> {
   forgotPassemail() async {
     if (_formKey.currentState.validate()) {
       String email = controllerEmail.text;
-      //globals.resetpassEmail = email;
-      if (email != Null) {
-        // Navigator.push(context,
-        //     MaterialPageRoute(builder: (context) => Forgotpasswordemail()));
+      ForgotpassResponse res =
+      await api.forgotpass(ForgotpassRequest(email: email));
+
+      if(globals.status == "200"){
+        if (res.resposne=="Found email") {
+          globals.resetpassEmail = res.responseEmail;
+          print(globals.resetpassEmail);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Forgotpasswordemail()));
+        }else{
+          SweetAlert.show(
+            context,
+            title: "Error",
+            subtitle: "Forgot password failed!",
+            style: SweetAlertStyle.error,
+          );
+        }
+      }else{
+        SweetAlert.show(
+          context,
+          title: "Error",
+          subtitle: "Forgot password failed!",
+          style: SweetAlertStyle.error,
+        );
       }
     }
   }

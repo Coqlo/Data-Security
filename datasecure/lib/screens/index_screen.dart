@@ -1,5 +1,6 @@
 
 import 'package:datasecure/doing/historical_screen.dart';
+import 'package:datasecure/screens/Auth/login_screen.dart';
 import 'package:datasecure/screens/account_screen.dart';
 import 'package:datasecure/screens/caesarshift_screen.dart';
 import 'package:datasecure/screens/home_screen.dart';
@@ -30,7 +31,7 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget bottomNavBar = BottomNavigationBar(
 
 
-      backgroundColor: Color(0xFF131426),
+      backgroundColor: Color(0xFF191a49),
       currentIndex: currentIndex,
       onTap: (int index){
         setState(() {
@@ -57,37 +58,29 @@ class _IndexScreenState extends State <IndexScreen>{
     Widget myDrawer= Drawer(
       
       child: Container(
-        color: Color(0xFF131426),
+        color: Color(0xFF191a49),
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white70,
-                child: Text(
-                    'FL',
-                  style: TextStyle(
-                    color: Colors.brown,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40
-                  ),
-                ),
+                backgroundImage: AssetImage("assests/images/logo.png"),
               ),
               accountName: Text('${globals.firstname}\t\t${globals.lastname}',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 25
+                fontSize: 25,color: Color(0xFF7ebafe)
               ),),
               accountEmail: Text('${globals.email}',style: TextStyle(
-                fontSize: 18
+                fontSize: 18,color: Colors.white
               ),),
 
               decoration: BoxDecoration(
-                color: Color(0xFF050638),
+                color: Color(0xFF191a49),
               ),
             ),
             ListTile(
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('Historical Cipher',style: TextStyle(
                   fontSize: 16,
@@ -103,7 +96,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             Divider(),
             ListTile(
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('Shift Cipher',style: TextStyle(
                 fontSize: 16,
@@ -121,7 +114,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Mono-alphabetic Substitution Cipher',style: TextStyle(
                   fontSize: 16,
@@ -137,7 +130,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Polyalphabetic Substitution Cipher',style: TextStyle(
                   fontSize: 16,
@@ -153,7 +146,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('Vigenère Cipher',style: TextStyle(
                   fontSize: 16,
@@ -169,7 +162,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A Permutation Cipher',style: TextStyle(
                   fontSize: 16,
@@ -183,7 +176,7 @@ class _IndexScreenState extends State <IndexScreen>{
             ),
             ListTile(
 
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.book,color: Colors.white,),
               title: Text('A One-time Pad',style: TextStyle(
                   fontSize: 16,
@@ -199,20 +192,19 @@ class _IndexScreenState extends State <IndexScreen>{
 
             Divider(height: 4,),
             ListTile(
-              tileColor: Color(0xFF050638),
+              tileColor: Color(0xFF191a49),
               leading: Icon(Icons.exit_to_app,color: Colors.redAccent,),
-              title: Text('Sing out',style: TextStyle(
+              title: Text('Logout',style: TextStyle(
                   fontSize: 20,
                 color: Colors.white
               ),
               ),
-              subtitle: Text('ออกจากการใช้งาน',style: TextStyle(
-                color: Colors.white,
-              ),),
               trailing: Icon(Icons.keyboard_arrow_right,color: Colors.red,),
               onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).pop();
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoginScreen()));
               },
             ),
           ],
@@ -222,8 +214,8 @@ class _IndexScreenState extends State <IndexScreen>{
     return Scaffold(
       drawer: myDrawer,
       appBar: AppBar(
-       title: Text('Data Security'),
-        backgroundColor: Color(0xFF2f304e),
+       title: Text('Data Security',style: TextStyle(color: Colors.white),),
+        backgroundColor: Color(0xFF191a49),
       ),
       body: pages[currentIndex],
       bottomNavigationBar: bottomNavBar,

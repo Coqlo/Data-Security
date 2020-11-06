@@ -1,9 +1,15 @@
 
 import 'dart:convert';
+import 'package:datasecure/model/ForgotpassRequest.dart';
+import 'package:datasecure/model/ForgotpassResponse.dart';
 import 'package:datasecure/model/LoginRequest.dart';
 import 'package:datasecure/model/LoginResponse.dart';
+import 'package:datasecure/model/NewpassRequest.dart';
+import 'package:datasecure/model/NewpassResponse.dart';
 import 'package:datasecure/model/RegisterRequest.dart';
 import 'package:datasecure/model/RegisterResponse.dart';
+import 'package:datasecure/model/VerifyRequest.dart';
+import 'package:datasecure/model/VerifyResponse.dart';
 import 'package:http/http.dart' as http;
 import 'package:datasecure/global/global.dart' as globals;
 
@@ -29,16 +35,34 @@ class API {
   }
 
   Future<LoginResponse> login(LoginRequest data) async {
-    String url = 'login/signIn';
+    String url = 'home/signIn';
 
     Map<String, dynamic> loginres = await connect(data.toJson(), url);
     return LoginResponse.fromJson(loginres);
   }
 
   Future<RegisterResponse> register(RegisterRequest data) async {
-    String url = 'login/registration';
+    String url = 'home/registration';
 
     Map<String, dynamic> regisres = await connect(data.toJson(), url);
     return RegisterResponse.fromJson(regisres);
+  }
+  Future<ForgotpassResponse> forgotpass(ForgotpassRequest data) async {
+    String url = 'home/forgotPassword';
+
+    Map<String, dynamic> forgotpassres = await connect(data.toJson(), url);
+    return ForgotpassResponse.fromJson(forgotpassres);
+  }
+  Future<VerifyResponse> verify(VerifyRequest data) async {
+    String url = 'home/checkOTP';
+
+    Map<String, dynamic> verifyres = await connect(data.toJson(), url);
+    return VerifyResponse.fromJson(verifyres);
+  }
+  Future<NewpassResponse> newpass(NewpassRequest data) async {
+    String url = 'home/changPassword';
+
+    Map<String, dynamic> newpassres = await connect(data.toJson(), url);
+    return NewpassResponse.fromJson(newpassres);
   }
 }

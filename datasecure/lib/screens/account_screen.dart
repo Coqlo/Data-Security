@@ -41,13 +41,16 @@ class _AccountScreenState extends State <AccountScreen>{
                   width: _width,
 
                   child: CircleAvatar(
-                    radius: _heigth,
-                    backgroundImage: NetworkImage('https://scontent.fbkk10-1.fna.fbcdn.net/v/t31.0-8/29064575_1775509835821857_2691846861250441171_o.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_eui2=AeG0NlTVmorwfwPuegP190J2Is8f7qCZBmUizx_uoJkGZVMm89o185dbswustnFSmJZTRCwq8PxGfn7eq_DNPTsh&_nc_ohc=8QzZmfMJLzMAX95pFEf&_nc_ht=scontent.fbkk10-1.fna&oh=497eb3554db7b1feeb89238a04f5d630&oe=5FBFB65B'),
+                    //radius: _heigth,
+                    maxRadius: 80,
+                    minRadius: 80,
+                    backgroundImage: AssetImage("assests/images/logo250.png"),
                   ),
                 ),
+                SizedBox(height: _heigth*0.05,),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF050638),
+                    tileColor: Color(0xFF191a49),
                     leading: Text('Name: ',style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -56,19 +59,34 @@ class _AccountScreenState extends State <AccountScreen>{
                     title: Text('${globals.firstname}\t\t${globals.lastname}',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        color: Color(0xFFe4357e)
+                    ),),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    tileColor: Color(0xFF191a49),
+                    leading: Text('Email: ',style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                    ),),
+                    title: Text('${globals.email}',style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                         color: Colors.lightBlue
                     ),),
                   ),
                 ),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF050638),
+                    tileColor: Color(0xFF191a49),
                     leading: Text('History: ',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.white
                     ),),
-                    title: Text('???????????????????????????????????????????????????????????????????????????????????????',style: TextStyle(
+                    title: Text('Studies Computer Engineering at Faculty of Engineering at Kamphaeng Saen Kasetsart University',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.lightBlue
@@ -77,13 +95,13 @@ class _AccountScreenState extends State <AccountScreen>{
                 ),
                 Card(
                   child: ListTile(
-                    tileColor: Color(0xFF050638),
+                    tileColor: Color(0xFF191a49),
                     leading: Text('BirthDay: ',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.white
                     ),),
-                    title: Text('???????????????????',style: TextStyle(
+                    title: Text('05\tAugust\t1998',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.lightBlue
