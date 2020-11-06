@@ -27,17 +27,17 @@ class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
     );
   }
   PolyDecrypt(){
-//    String CipherText = controllerCipherText.text;
-//    print(CipherText);
-//    int key = int.parse(controllerKeyCipherText.text);
-//    CaesarShift encrypt = CaesarShift(CipherText, key);
-//    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
-//    SweetAlert.show(
-//      context,
-//      title: "Plain Text is",
-//      subtitle: outputDecrypt,
-//      style: SweetAlertStyle.success,
-//    );
+
+    String CipherText = controllerCipherText.text;
+
+    PolyAlphabetic decrypt = PolyAlphabetic(CipherText);
+    outputDecrypt=decrypt.PolyAlphabeticDecrypt(CipherText);
+    SweetAlert.show(
+      context,
+      title: "Poly Alphabetic",
+      subtitle: "Plain text is: "+outputDecrypt,
+      style: SweetAlertStyle.success,
+    );
 
 
   }
@@ -160,6 +160,13 @@ class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
                   ),
                 ),
               ),
+
+
+
+
+
+
+
 
               //decryption
               Container(
