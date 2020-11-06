@@ -1,5 +1,8 @@
+import 'package:datasecure/doing/polyAlphabeticCode.dart';
 import 'package:datasecure/screens/Auth/login_screen.dart';
 import 'package:datasecure/screens/monoalphabetic_screen.dart';
+import 'package:datasecure/screens/polyalphabetic_screen.dart';
+import 'package:datasecure/screens/vigenerecipher_screen.dart';
 import 'package:flutter/material.dart';
 
 

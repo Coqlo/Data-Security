@@ -1,3 +1,4 @@
+import 'package:datasecure/doing/VigenreCode.dart';
 import 'package:datasecure/doing/caesarShiftCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
@@ -17,27 +18,25 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
   VigenereEncrypt(){
 
     String plainText = controllerPlainText.text;
-    print(plainText);
-    int key = int.parse(controllerKeyPlainText.text);
-    CaesarShift encrypt = CaesarShift(plainText, key);
-    outputEncrypt=encrypt.caesarEncrypt(plainText, key);
+    String key = controllerKeyPlainText.text;
+    Vigenre encrypt = Vigenre(plainText, key);
+    outputEncrypt=encrypt.VigenereEncrypt(plainText, key);
     SweetAlert.show(
       context,
-      title: "Text Encryption is",
-      subtitle: outputEncrypt,
+      title: "Vigenere Encryption",
+      subtitle: "Cipher Text: "+outputEncrypt,
       style: SweetAlertStyle.success,
     );
   }
   VigenereDecrypt(){
     String CipherText = controllerCipherText.text;
-    print(CipherText);
-    int key = int.parse(controllerKeyCipherText.text);
-    CaesarShift encrypt = CaesarShift(CipherText, key);
-    outputDecrypt=encrypt.caesarDecrypt(CipherText, key);
+    String key = controllerKeyCipherText.text;
+    Vigenre decrypt = Vigenre(CipherText, key);
+    outputDecrypt=decrypt.VigenereDecrypt(CipherText, key);
     SweetAlert.show(
       context,
-      title: "Plain Text is",
-      subtitle: outputDecrypt,
+      title: "Vigenere Encryption",
+      subtitle: "Plain Text is: "+outputDecrypt,
       style: SweetAlertStyle.success,
     );
 
@@ -107,6 +106,45 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                       child: TextFormField(
                                         validator: (String value) {
                                           if (value.isEmpty)
+                                            return '*Please Enter a plainText';
+                                        },
+                                        controller: controllerPlainText,
+
+                                        style: TextStyle(
+                                            fontSize: _width / 23.0,
+                                            fontFamily: 'ThaiSansNeue'),
+                                      ),
+                                    )),
+                              ],
+                            ),
+
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.0,
+                      ),
+                      ListTile(
+                        title: Text(
+                          "Key",
+                          style: TextStyle(
+                              fontSize: _width / 15.0,
+                              color: Color(0xFF160c78)),
+                        ),
+                        enabled: false,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(12),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      child: TextFormField(
+                                        validator: (String value) {
+                                          if (value.isEmpty)
                                             return '*Please Enter a Key';
                                         },
                                         controller: controllerKeyPlainText,
@@ -116,6 +154,7 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                             fontFamily: 'ThaiSansNeue'),
                                       ),
                                     )),
+
                               ],
                             ),
 
@@ -160,6 +199,17 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                 ),
               ),
 
+
+
+
+
+
+
+
+
+
+
+
               //decryption
               Container(
                 height: _heigth/2,
@@ -191,9 +241,49 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                       child: TextFormField(
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a Key';
+                                            return '*Please Enter a input';
                                         },
                                         controller: controllerCipherText,
+
+                                        style: TextStyle(
+                                            fontSize: _width / 23.0,
+                                            fontFamily: 'ThaiSansNeue'),
+                                      ),
+                                    )),
+
+                              ],
+                            ),
+
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.0,
+                      ),
+                      ListTile(
+                        title: Text(
+                          "Key",
+                          style: TextStyle(
+                              fontSize: _width / 15.0,
+                              color: Color(0xFF160c78)),
+                        ),
+                        enabled: false,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(12),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      child: TextFormField(
+                                        validator: (String value) {
+                                          if (value.isEmpty)
+                                            return '*Please Enter a Key';
+                                        },
+                                        controller: controllerKeyCipherText,
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
