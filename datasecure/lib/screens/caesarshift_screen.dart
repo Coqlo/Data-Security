@@ -113,7 +113,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            ),
                                       ),
                                     )),
 
@@ -155,7 +155,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            ),
                                       ),
                                     )),
 
@@ -233,7 +233,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            ),
                                       ),
                                     )),
 
@@ -271,7 +271,7 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
 
                                         style: TextStyle(
                                             fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            ),
                                       ),
                                     )),
 

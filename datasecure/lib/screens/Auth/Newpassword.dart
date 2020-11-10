@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
 import 'package:sweetalert/sweetalert.dart';
 
+import 'forgotpass_1.dart';
 import 'newpasssuccess.dart';
 
 
@@ -84,7 +85,11 @@ class _ForgotnewpasswordState extends State<Forgotnewpassword> {
                             alignment: Alignment.centerLeft,
                             icon: Icon(Icons.arrow_back_ios),
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Forgotpassword()));
                             },
                             color: Color(0xFF5c3dd9),
                           ),

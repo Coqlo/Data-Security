@@ -33,7 +33,7 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
           SweetAlert.show(
             context,
             title: "Error",
-            subtitle: "verification code failed!",
+            subtitle: "OTP INCORRECT",
             style: SweetAlertStyle.error,
           );
         }
@@ -41,7 +41,7 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
         SweetAlert.show(
           context,
           title: "Error",
-          subtitle: "verification code failed!",
+          subtitle: "OTP INCORRECT",
           style: SweetAlertStyle.error,
         );
       }

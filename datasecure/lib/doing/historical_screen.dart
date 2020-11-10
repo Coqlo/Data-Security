@@ -14,7 +14,7 @@ class _HistoricalScreenState extends State<HistoricalScreen>{
     final _width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Historical Cipher'),
+        title: Text('Historical Cipher',style: TextStyle(color: Colors.white),),
         backgroundColor: Color(0xFF050638),
       ),
         body:  LayoutBuilder(builder: (context,contrains){
