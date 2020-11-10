@@ -1,41 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:datasecure/helper/demo_values.dart';
+import 'package:datasecure/view/widgets/post_card.dart';
 
-class SettingScreen extends StatefulWidget {
-
-  _SettingScreenState createState() => _SettingScreenState();
-}
-
-class _SettingScreenState extends State <SettingScreen>{
-
-
+class HomePage extends StatelessWidget {
+  const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _heigth = MediaQuery.of(context).size.height;
-    final _width = MediaQuery.of(context).size.width;
-
-
     return Scaffold(
-        body:  LayoutBuilder(builder: (context,contrains){
-          return Container(
-            alignment: Alignment.center,
-            width: _width,
-            height: _heigth,
-            color: Color(0xFF050638),
-            padding: EdgeInsets.only(
-                top: _heigth*0.034,
-                bottom: _heigth*0.02,
-                left: _heigth*0.01,
-                right: _heigth*0.01
-            ),
-            child: Text('setting Screen'),
-          );
 
-        }
-        )
-
+      body: ListView.builder(
+        itemCount: DemoValues.posts.length,
+        itemBuilder: (BuildContext context, int index) {
+          return PostCard(postData: DemoValues.posts[index]);
+        },
+      ),
     );
-
   }
 }

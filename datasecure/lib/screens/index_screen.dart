@@ -20,7 +20,7 @@ class IndexScreen extends StatefulWidget {
 
 class _IndexScreenState extends State <IndexScreen>{
   int currentIndex=0;
-  List pages =[HomeScreen(),AccountScreen(),SettingScreen()];
+  List pages =[HomeScreen(),AccountScreen(),HomePage()];
 
 
   @override
