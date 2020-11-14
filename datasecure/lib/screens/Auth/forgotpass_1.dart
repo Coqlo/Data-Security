@@ -23,7 +23,9 @@ class _ForgotpasswordState extends State<Forgotpassword> {
       String email = controllerEmail.text;
       ForgotpassResponse res =
       await api.forgotpass(ForgotpassRequest(email: email));
-
+      // globals.resetpassEmail=email;
+      // Navigator.push(context,
+      //     MaterialPageRoute(builder: (context) => Forgotpasswordemail()));
       if(globals.status == "200"){
         if (res.resposne=="Found email") {
           globals.resetpassEmail = res.responseEmail;

@@ -1,6 +1,7 @@
 import 'package:datasecure/doing/caesarShiftCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
+import 'ToUpper.dart';
 
 class CaesarShiftScreen extends StatefulWidget {
   _CaesarShiftScreenState createState() => _CaesarShiftScreenState();
@@ -104,16 +105,20 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
-
+                                        controller: controllerPlainText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a input';
+                                            return '*Please Enter a Input';
                                         },
-                                        controller: controllerPlainText,
 
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            ),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 
@@ -147,15 +152,21 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerKeyPlainText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
                                             return '*Please Enter a Key';
                                         },
-                                        controller: controllerKeyPlainText,
 
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            ),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
+                                        keyboardType: TextInputType.number,
                                       ),
                                     )),
 
@@ -173,7 +184,14 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                   width: 500.0,
                                   height: 50,
                                   decoration: BoxDecoration(
-                                      color: Colors.grey,
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color(0xff00c6ff),
+                                          Color(0xFF5c3dd9)
+                                        ],
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
+                                      ),
                                       borderRadius: BorderRadius.circular(20),
                                       boxShadow: [
                                         BoxShadow(
@@ -225,15 +243,20 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerCipherText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a Key';
+                                            return '*Please Enter a Input';
                                         },
-                                        controller: controllerCipherText,
 
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            ),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 
@@ -263,15 +286,21 @@ class _CaesarShiftScreenState extends State<CaesarShiftScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerKeyCipherText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a input';
+                                            return '*Please Enter a Key';
                                         },
-                                        controller: controllerKeyCipherText,
 
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            ),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
+                                        keyboardType: TextInputType.number,
                                       ),
                                     )),
 

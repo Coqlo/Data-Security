@@ -3,6 +3,8 @@ import 'package:datasecure/doing/caesarShiftCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 
+import 'ToUpper.dart';
+
 class VigenereCipherScreen extends StatefulWidget {
   _VigebereCipherScreenState createState() => _VigebereCipherScreenState();
 }
@@ -104,15 +106,19 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerPlainText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
                                             return '*Please Enter a plainText';
                                         },
-                                        controller: controllerPlainText,
-
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
                               ],
@@ -148,10 +154,14 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                             return '*Please Enter a Key';
                                         },
                                         controller: controllerKeyPlainText,
-
+                                        autofocus: true,
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 
@@ -244,10 +254,14 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                             return '*Please Enter a input';
                                         },
                                         controller: controllerCipherText,
-
+                                        autofocus: true,
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 
@@ -284,10 +298,14 @@ class _VigebereCipherScreenState extends State<VigenereCipherScreen> {
                                             return '*Please Enter a Key';
                                         },
                                         controller: controllerKeyCipherText,
-
+                                        autofocus: true,
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 

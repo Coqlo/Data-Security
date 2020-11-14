@@ -3,6 +3,8 @@ import 'package:datasecure/doing/polyAlphabeticCode.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 
+import 'ToUpper.dart';
+
 class PolyalphabeticScreen extends StatefulWidget {
   _PolyalphabeticScreenState createState() => _PolyalphabeticScreenState();
 }
@@ -106,15 +108,18 @@ class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
                                     child: Container(
                                       child: TextFormField(
                                         controller: controllerPlainText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a PlainText';
+                                            return '*Please Enter a Text';
                                         },
-
-
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
                               ],
@@ -197,15 +202,19 @@ class _PolyalphabeticScreenState extends State<PolyalphabeticScreen> {
                                     flex: 1,
                                     child: Container(
                                       child: TextFormField(
+                                        controller: controllerCipherText,
+                                        autofocus: true,
                                         validator: (String value) {
                                           if (value.isEmpty)
-                                            return '*Please Enter a Key';
+                                            return '*Please Enter a Text';
                                         },
-                                        controller: controllerCipherText,
-
                                         style: TextStyle(
-                                            fontSize: _width / 23.0,
-                                            fontFamily: 'ThaiSansNeue'),
+                                            fontSize: _heigth * 0.025,
+                                            color: Colors.black),
+                                        obscureText: false,
+                                        textAlign: TextAlign.start,
+                                        maxLines: null,
+                                        inputFormatters: [UpperCaseTxt()],
                                       ),
                                     )),
 

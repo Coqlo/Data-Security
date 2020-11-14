@@ -5,7 +5,7 @@ import 'package:datasecure/screens/account_screen.dart';
 import 'package:datasecure/screens/caesarshift_screen.dart';
 import 'package:datasecure/screens/home_screen.dart';
 import 'package:datasecure/screens/polyalphabetic_screen.dart';
-import 'package:datasecure/screens/setting_screen.dart';
+import 'file:///D:/Work/DataSe/Data-Security/datasecure/lib/screens/Post/post_screen.dart';
 import 'package:datasecure/screens/vigenerecipher_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
@@ -20,7 +20,7 @@ class IndexScreen extends StatefulWidget {
 
 class _IndexScreenState extends State <IndexScreen>{
   int currentIndex=0;
-  List pages =[HomeScreen(),AccountScreen(),HomePage()];
+  List pages =[HomeScreen(),Post(),AccountScreen()];
 
 
   @override
@@ -29,27 +29,29 @@ class _IndexScreenState extends State <IndexScreen>{
     final _width = MediaQuery.of(context).size.width;
 
     Widget bottomNavBar = BottomNavigationBar(
-
-
-      backgroundColor: Color(0xFF191a49),
       currentIndex: currentIndex,
       onTap: (int index){
         setState(() {
           currentIndex = index;
         });
       },
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Color(0xFF191a49),
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.white,),
+            backgroundColor: Color(0xFF7ebafe),
             title: Text('Home',style: TextStyle(
                 color: Colors.white
             ),)),
+        BottomNavigationBarItem(icon: Icon(Icons.local_post_office,color: Colors.white),
+            backgroundColor: Color(0xFF7ebafe),
+            title: Text('Post',style: TextStyle(
+              color: Colors.white
+            ),)),
         BottomNavigationBarItem(icon: Icon(Icons.account_circle,color: Colors.white),
+            backgroundColor: Color(0xFF7ebafe),
             title: Text('Profile',style: TextStyle(
                 color: Colors.white
-            ),)),
-        BottomNavigationBarItem(icon: Icon(Icons.settings,color: Colors.white),
-            title: Text('Setting',style: TextStyle(
-              color: Colors.white
             ),)),
 
       ],
@@ -160,34 +162,34 @@ class _IndexScreenState extends State <IndexScreen>{
                     context, MaterialPageRoute(builder: (context) => VigenereCipherScreen()));
               },
             ),
-            ListTile(
-
-              tileColor: Color(0xFF191a49),
-              leading: Icon(Icons.book,color: Colors.white,),
-              title: Text('A Permutation Cipher',style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white
-              ),
-              ),
-
-              trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
-              onTap: () {
-              },
-            ),
-            ListTile(
-
-              tileColor: Color(0xFF191a49),
-              leading: Icon(Icons.book,color: Colors.white,),
-              title: Text('A One-time Pad',style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white
-              ),
-              ),
-
-              trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
-              onTap: () {
-              },
-            ),
+            // ListTile(
+            //
+            //   tileColor: Color(0xFF191a49),
+            //   leading: Icon(Icons.book,color: Colors.white,),
+            //   title: Text('A Permutation Cipher',style: TextStyle(
+            //       fontSize: 16,
+            //       color: Colors.white
+            //   ),
+            //   ),
+            //
+            //   trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
+            //   onTap: () {
+            //   },
+            // ),
+            // ListTile(
+            //
+            //   tileColor: Color(0xFF191a49),
+            //   leading: Icon(Icons.book,color: Colors.white,),
+            //   title: Text('A One-time Pad',style: TextStyle(
+            //       fontSize: 16,
+            //       color: Colors.white
+            //   ),
+            //   ),
+            //
+            //   trailing: Icon(Icons.keyboard_arrow_right,color: Colors.white,),
+            //   onTap: () {
+            //   },
+            // ),
 
 
             Divider(height: 4,),

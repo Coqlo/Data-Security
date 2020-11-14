@@ -45,7 +45,7 @@ class _NonImageContents extends StatelessWidget {
     final PostModel postData = InheritedPostModel.of(context).postData;
 
     return Container(
-      margin: const EdgeInsets.all(8.0),
+      margin: EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

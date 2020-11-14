@@ -1,32 +1,23 @@
-
 import 'package:flutter/material.dart';
 import 'package:datasecure/global/global.dart' as globals;
 
 
 class AccountScreen extends StatefulWidget {
-
   _AccountScreenState createState() => _AccountScreenState();
 }
-
 class _AccountScreenState extends State <AccountScreen>{
-
-
 
   @override
   Widget build(BuildContext context) {
     final _heigth = MediaQuery.of(context).size.height;
     final _width = MediaQuery.of(context).size.width;
-
-
     return Scaffold(
-
-
         body:  LayoutBuilder(builder: (context,contrains){
           return Container(
             alignment: Alignment.center,
             width: _width,
             height: _heigth,
-            color: Color(0xFF050638),
+            color: Color(0xFF040526),
             padding: EdgeInsets.only(
                 top: _heigth*0.034,
                 bottom: _heigth*0.02,
@@ -111,10 +102,8 @@ class _AccountScreenState extends State <AccountScreen>{
               ],
             )
           );
-
         }
         )
-
     );
 
   }

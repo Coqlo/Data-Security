@@ -1,4 +1,5 @@
 import 'package:datasecure/doing/polyAlphabeticCode.dart';
+import 'package:datasecure/screens/Auth/forgotpass_2.dart';
 import 'package:datasecure/screens/Auth/login_screen.dart';
 import 'package:datasecure/screens/index_screen.dart';
 import 'package:datasecure/screens/monoalphabetic_screen.dart';

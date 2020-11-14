@@ -5,9 +5,9 @@ import 'package:datasecure/model/VerifyResponse.dart';
 import 'package:flutter/material.dart';
 import 'package:sweetalert/sweetalert.dart';
 import 'package:datasecure/global/global.dart' as globals;
-
+import 'package:slide_countdown_clock/slide_countdown_clock.dart';
 import 'Newpassword.dart';
-
+import 'forgotpass_1.dart';
 
 class Forgotpasswordemail extends StatefulWidget {
   @override
@@ -19,14 +19,14 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
   final api = API();
   TextEditingController controllerOTP = TextEditingController();
 
-  forgotPasscode() async{
+  forgotPasscode() async {
     if (_formKey.currentState.validate()) {
       String otp = controllerOTP.text;
-      VerifyResponse res =
-      await api.verify(VerifyRequest(email: globals.resetpassEmail, otp: otp));
+      VerifyResponse res = await api
+          .verify(VerifyRequest(email: globals.resetpassEmail, otp: otp));
       if (globals.status == "200") {
         if (res.response == "OTP CORRECT") {
-          globals.OTP=otp;
+          globals.OTP = otp;
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => Forgotnewpassword()));
         } else {
@@ -52,6 +52,8 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
+    Duration _duration = Duration(seconds: 180);
+    GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
     return Scaffold(
         resizeToAvoidBottomPadding: false,
@@ -99,24 +101,27 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
                             child: Image.asset('assests/images/security.png'),
                           ),
                         ),
-                        SizedBox(height: _height*0.05,),
+                        SizedBox(
+                          height: _height * 0.05,
+                        ),
                         Padding(
                           padding: EdgeInsets.only(
                               right: _width / 40.0, left: _width / 40.0),
                           child: Text(
                             'Verify Your Email Address',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: _width / 13.8,
-                                ),
+                              color: Colors.white,
+                              fontSize: _width / 13.8,
+                            ),
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(top: _height / 40.0)),
-                        Text("Confirm it  belongs to you to keep your account secure",
+                        Text(
+                            "Confirm it  belongs to you to keep your account secure",
                             style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: _height*0.019,
-                                )),
+                              color: Colors.white70,
+                              fontSize: _height * 0.019,
+                            )),
                         Padding(padding: EdgeInsets.only(top: _height / 40.0)),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -124,35 +129,38 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
                           children: <Widget>[
                             Icon(Icons.email, color: Color(0xFF7f4abf)),
                             Text(
-                              " Email: "+globals.resetpassEmail,
+                              " Email: " + globals.resetpassEmail,
                               style: TextStyle(
-                                  color: Color(0xFF7f4abf), fontSize: _height*0.025),
+                                  color: Color(0xFF7f4abf),
+                                  fontSize: _height * 0.025),
                             ),
                           ],
                         ),
                         Padding(padding: EdgeInsets.only(top: _height / 40.0)),
                         Padding(
                           padding: EdgeInsets.only(
-                              left: _width / 15, right: _width / 15),
+                              left: _width / 6, right: _width / 6),
                           child: TextFormField(
                             validator: (String value) {
                               if (value.length < 6)
-                                return '*verification at least 6 number. Please try again';
-                              if (value.isEmpty) return '*Please enter your verification code';
+                                return '*verification at least 6 number';
+                              if (value.isEmpty)
+                                return '*Please enter your verification code';
                             },
-                            style: TextStyle(fontSize: _height*0.02,color: Color(0xFF7ebafe)),
+                            style: TextStyle(
+                                fontSize: _height * 0.045,
+                                color: Color(0xFF7ebafe)),
                             controller: controllerOTP,
                             obscureText: false,
-                            textAlign: TextAlign.start,
+                            textAlign: TextAlign.center,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(fontSize: _height*0.019),
-                              labelText: 'Enter your verification code',
+                              errorStyle: TextStyle(fontSize: _height * 0.019),
                               labelStyle: TextStyle(
                                 color: Colors.grey,
                               ),
-                              prefixIcon: Icon(
-                                Icons.verified_user,
-                                color: Color(0xFF7ebafe),
+                              hintText: " * * * * * * ",
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
@@ -163,7 +171,35 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
                             keyboardType: TextInputType.number,
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: _height / 20.0)),
+                        SizedBox(
+                          height: _height * 0.005,
+                        ),
+                        SlideCountdownClock(
+                          duration: _duration,
+                          slideDirection: SlideDirection.Down,
+                          separator: ":",
+                          textStyle: TextStyle(
+                            color: Color(0xFFe4357e),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          onDone: () {
+                            SweetAlert.show(
+                              context,
+                              title: "Time Out!",
+                              subtitle: "Please Try Again",
+                              style: SweetAlertStyle.error,
+                              onPress: (bool isConfirm){
+                                if(isConfirm){
+                                  Navigator.pop(context);
+                                }
+                              }
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          height: _height * 0.03,
+                        ),
                         InkWell(
                           child: Container(
                             decoration: BoxDecoration(
@@ -172,17 +208,18 @@ class _ForgotpasswordemailState extends State<Forgotpasswordemail> {
                             ),
                             alignment: Alignment.center,
                             height: _height * 0.07,
-                            width: _width,
+                            width: _width * 0.7,
                             child: Text(
                               "Submit",
                               style: TextStyle(
-                                  fontSize: _height*0.035,
+                                  fontSize: _height * 0.035,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
                           ),
                           onTap: () => {forgotPasscode()},
-                        ),                         ]),
+                        ),
+                      ]),
                     )),
               ),
               // ),

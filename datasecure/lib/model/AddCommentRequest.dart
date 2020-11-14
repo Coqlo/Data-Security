@@ -1,28 +1,29 @@
-class RegisterRequest {
-
+class AddCommentRequest {
+  int pid;
+  String email;
   String firstName;
   String lastName;
-  String email;
-  String passWord;
+  String message;
 
 
-  RegisterRequest(
+
+  AddCommentRequest(
       {
+        this.pid,
+        this.email,
         this.firstName,
         this.lastName,
-        this.email,
-        this.passWord,
+        this.message,
+
       });
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-
+    data['pid'] = this.pid;
+    data['email'] = this.email;
     data['firstName'] = this.firstName;
     data['lastName'] = this.lastName;
-    data['email'] = this.email;
-    data['passWord'] = this.passWord;
-
-
+    data['message'] = this.message;
 
     return data;
   }

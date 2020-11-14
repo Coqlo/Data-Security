@@ -1,28 +1,27 @@
-class RegisterRequest {
-
+class AddPostRequest {
+  String email;
   String firstName;
   String lastName;
-  String email;
-  String passWord;
+  String message;
 
 
-  RegisterRequest(
+
+  AddPostRequest(
       {
+
+        this.email,
         this.firstName,
         this.lastName,
-        this.email,
-        this.passWord,
+        this.message,
+
       });
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-
+    data['email'] = this.email;
     data['firstName'] = this.firstName;
     data['lastName'] = this.lastName;
-    data['email'] = this.email;
-    data['passWord'] = this.passWord;
-
-
+    data['message'] = this.message;
 
     return data;
   }
