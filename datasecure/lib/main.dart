@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           primaryIconTheme: IconThemeData(color: Colors.white),
     ),
 
-      home: IndexScreen(),
+      home: LoginScreen(),
     );
 
   }

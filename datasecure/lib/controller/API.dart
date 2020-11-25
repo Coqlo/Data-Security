@@ -26,7 +26,7 @@ class API {
     utf8.toString();
     String body = json.encode(data);
     print('body: ' + body);
-    final response = await http.post('http://158.108.155.206:8080/' + url,
+    final response = await http.post('http://10.34.5.169:8080/' + url,
         headers: {"X-Signature": "USER","Content-Type": "application/json; charset=UTF-8"},
         body: body);
     String logResponse = response.statusCode.toString();
@@ -46,7 +46,7 @@ class API {
     utf8.toString();
     String body = json.encode(data);
     print('body: ' + body);
-    final response = await http.post('http://158.108.155.206:8080/' + url,
+    final response = await http.post('http://10.34.5.169:8080/' + url,
         headers: {"Content-Type": "application/json; charset=UTF-8"},
         body: body);
     String logResponse = response.statusCode.toString();
